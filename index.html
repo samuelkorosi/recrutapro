@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RecrutaPRO - Seu RH Especializado</title>
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,8 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3ea9fe1b2a.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -131,17 +134,54 @@
 
         <section id="depoimentos">
             <h2>O que nossos clientes dizem</h2>
-            <div class="container">
-                <div class="depoimento">
-                    <p>"A RecrutaPro foi essencial para encontrar o candidato certo para nossa equipe. O processo foi
-                        rápido e sem complicação!"</p>
-                    <cite>- João Silva, CEO da Empresa XYZ</cite>
+            <div class="depoimentos mySwiper">
+                <div class="container swiper-wrapper">
+
+                    <div class="depoimento swiper-slide">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p class="texto">"A RecrutaPro foi essencial para encontrar o candidato certo para nossa equipe.
+                            O
+                            processo foi rápido e sem complicação!"</p>
+                        <div class="person">
+                            <img src="./assets/ceo.jpeg" alt="João Silva">
+                            <div class="info-person">
+                                <p class="nome-person">João Silva</p>
+                                <p class="func-person">CEO da Empresa CL Logistics</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="depoimento swiper-slide">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p class="texto">"Foi um prazer ser recrutada pela RecrutaPro. O processo de seleção foi
+                            transparente e eficiente!"</p>
+                        <div class="person">
+                            <img src="./assets/dev-front.jpeg" alt="Aline Takahashi">
+                            <div class="info-person">
+                                <p class="nome-person">Aline Takahashi</p>
+                                <p class="func-person">Candidata Selecionada</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="depoimento swiper-slide">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p class="texto">"A RecrutaPro facilitou nosso processo de seleção e nos ajudou a encontrar
+                            rapidamente o candidato perfeito. A eficiência e a atenção aos detalhes foram
+                            impressionantes!"
+                        </p>
+                        <div class="person">
+                            <img src="./assets/diretora-ti.jpeg" alt="Carla Almeida">
+                            <div class="info-person">
+                                <p class="nome-person">Carla Almeida</p>
+                                <p class="func-person">Diretor de TI da TechSolutions</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="depoimento">
-                    <p>"Foi um prazer ser recrutado pela RecrutaPro. O processo de seleção foi transparente e
-                        eficiente!"</p>
-                    <cite>- Maria Oliveira, Candidata Selecionada</cite>
-                </div>
+                <div class="swiper-button-next nav-btn"></div>
+                <div class="swiper-button-prev nav-btn"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -236,8 +276,9 @@
             </div>
         </div>
     </footer>
+    <script src="swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 
-<script src="./script.js"></script>
 
 </html>

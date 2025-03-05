@@ -4,6 +4,7 @@
     --light-color: aliceblue;
     --primary-color: #003366;
     --secondary-color: #66B3FF;
+    --secondary-transp: rgb(from var(--secondary-color) r g b / 20%);
     --gray-color: #B0B0B0;
 
     --linear-gray: linear-gradient(130deg, #E7F5FF, #B0B0B0);
@@ -315,27 +316,68 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     gap: 2rem;
-
     background: var(--primary-color);
 
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
+    .depoimentos {
+        width: 100%;
+        max-width: 800px;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 3rem;
     }
 
-    .depoimento {
-        font-style: italic;
+    .container {
+        max-width: 800px;
 
-        cite {
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: var(--secondary-color);
+        .depoimento {
+            width: 100% !important;
+            cursor: grab;
+
+            &:active {
+                cursor: grabbing;
+            }
+
+            i {
+                font-size: 5rem;
+                color: var(--secondary-transp);
+                margin-bottom: 1rem;
+            }
+
+            p.texto {
+                color: var(--gray-color);
+                margin-bottom: 2rem;
+            }
+
+            .person {
+                display: flex;
+                align-items: center;
+                gap: 1.25rem;
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                }
+
+                .info-person {
+                    .nome-person {
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                    }
+
+                    .func-person {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
         }
+    }
 
+    .nav-btn {
+        display: none;
+        color: var(--secondary-transp);
     }
 }
 
@@ -610,12 +652,13 @@ section {
     }
 
     #depoimentos {
-        .container {
-            flex-direction: row;
-            align-items: flex-start;
+        .nav-btn {
+            display: flex;
+        }
 
+        .container {
             .depoimento {
-                width: 50%;
+                padding: 0 60px 40px 60px;
             }
         }
     }
@@ -703,6 +746,10 @@ section {
     }
 
     #depoimentos {
+        .depoimentos {
+            padding: 0 20px 50px 20px;
+        }
+
         .container {
             width: 100%;
         }
@@ -720,12 +767,6 @@ section {
 
     section {
         padding: 2rem 4rem;
-    }
-
-    #depoimentos {
-        .container {
-            gap: 5rem;
-        }
     }
 
     .footer-container {
